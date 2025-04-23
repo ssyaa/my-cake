@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MyCake</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    
+    <div class="register-page-container">
+        <div class="register-left-content">
+            <h2>Make your own recipes!</h2>
+        </div>
+        <div class="register-right-content">
+            <div class="register-box">
+                <h1 class="register-title">Register</h1>
+                <form id="register-form">
+                    <div class="mb-6">
+                        <label for="firstname" class="block text-sm font-medium text-[#4B2E2A] mb-2">Firstname</label>
+                        <input id="firstname" type="text" placeholder="Enter your first name" class="register-input-field" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="lastname" class="block text-sm font-medium text-[#4B2E2A] mb-2">Lastname</label>
+                        <input id="lastname" type="text" placeholder="Enter your last name" class="register-input-field" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="username" class="block text-sm font-medium text-[#4B2E2A] mb-2">Username</label>
+                        <input id="username" type="text" placeholder="Enter your username" class="register-input-field" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-[#4B2E2A] mb-2">Email</label>
+                        <input id="email" type="email" placeholder="Enter your email" class="register-input-field" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-medium text-[#4B2E2A] mb-2">Password</label>
+                        <input id="password" type="password" placeholder="Enter your password" class="register-input-field" required>
+                    </div>
+                    <button type="submit" class="register-btn">Register</button>
+                </form>
+
+                <div class="register-text-center mt-6">
+                    <p class="register-text-link">
+                        <span>Sudah punya akun? </span><a href="login.html">Masuk</a>
+                    </p>
+                    <p class="register-text-link mt-2">
+                        <span>Lupa password? </span><a href="/forgotPassword.html">Ubah</a>
+                    </p>
+                </div>
+
+                <div id="register-error-message" class="error-message text-red-500 mt-4" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

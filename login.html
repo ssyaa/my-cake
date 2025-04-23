@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MyCake</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-page-container">
+        <div class="left-content">
+            <h2>Write your Recipes, let them know it!</h2>
+        </div>
+        <div class="right-content">
+            <div class="login-box">
+                <h1 class="login-title">Login</h1>
+                <form id="login-form">
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-[#4B2E2A] mb-2">Email</label>
+                        <input id="email" type="email" placeholder="Enter your email" class="input-field" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-medium text-[#4B2E2A] mb-2">Password</label>
+                        <input id="password" type="password" placeholder="Enter your password" class="input-field" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                
+                <div class="text-center mt-6">
+                    <p class="text-link">
+                        <span>Belum punya akun? </span><a href="register.html">Daftar</a>
+                    </p>
+                    <p class="text-link mt-2">
+                        <span>Lupa password? </span><a href="/forgotPassword.html">Ubah</a>
+                    </p>
+                </div>
+
+                <div id="error-message" class="error-message text-red-500 mt-4" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

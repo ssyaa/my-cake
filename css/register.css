@@ -1,0 +1,83 @@
+/* Basic Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    background-image: url('../assets/images/bglog.jpg'); /* Sesuaikan path jika perlu */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.register-page-container {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.register-left-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register-right-content {
+    width: 50%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.register-box {
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #4B2E2A;
+}
+
+.register-input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4B2E2A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #3a1f1a;
+}
+
+.register-text-link a {
+    text-decoration: none;
+    color: #4B2E2A;
+}
+
+.register-error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}

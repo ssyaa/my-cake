@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes Cake, Bounjour!</title>
+
+    <!-- Link ke file CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css"> <!-- Navbar CSS -->
+</head>
+<body>
+
+    <!-- Navbar langsung dimasukkan di sini -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">🍰 MyCake</div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resep.html">Recipe</a></li>
+                <li><a href="about.html">About</a></li>
+                <!-- Link Login yang berubah jadi Logout setelah login -->
+                <li><a href="login.html" id="login-logout">Login</a></li> 
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <!-- Gambar Background -->
+        <div class="hero-background">
+            <img src="assets/images/croissant.jpg" alt="Welcome Image" class="hero-image">
+        </div>
+
+        <!-- Konten -->
+        <div class="hero-content">
+            <h1 class="hero-heading">
+            Recipes Cake, Bounjour!
+            </h1>
+            <p class="hero-paragraph">
+            Temukan dan berbagi resep kue tradisional dan modern. <br>
+            Selamat mencoba dan semoga berhasil membuat kue yang lezat!
+            </p>
+        </div>
+    </section>
+
+    <!-- Link ke file JS -->
+    <script src="js/navbar.js" defer></script> <!-- Navbar loader -->
+    <script>
+        // Mengecek apakah user sudah login
+        const loginLogoutLink = document.getElementById('login-logout');
+
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            // Mengubah tampilan tombol login menjadi logout
+            loginLogoutLink.textContent = 'Logout';
+            loginLogoutLink.href = '#';  // Gak perlu pergi ke halaman lain
+
+            // Event untuk logout
+            loginLogoutLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('userEmail');
+                window.location.href = 'index.html'; // Kembali ke home setelah logout
+            });
+        }
+    </script>
+    <script src="js/index.js"></script> <!-- Link ke file JS lainnya -->
+</body>
+</html>

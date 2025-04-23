@@ -1,0 +1,71 @@
+/* Menghapus margin dan padding default pada body dan html */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Styling untuk HeroSection */
+.hero-section {
+    position: relative;
+    background-color: #fb923c; /* Warna orange */
+    padding: 0;
+    text-align: left;
+    background-image: url('assets/image/croissant.jpg'); /* Path gambar */
+    background-size: cover;  /* Gambar akan menutupi seluruh area */
+    background-position: center center; /* Menempatkan gambar di tengah */
+    background-repeat: no-repeat; /* Mencegah gambar terulang */
+    height: 100vh; /* Tinggi layar penuh */
+    border: none;
+    outline: none;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+}
+
+.hero-heading {
+    padding-top: 160px;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 16px;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.hero-paragraph {
+    font-size: 1.5rem;
+    color: #f9fafb;
+    line-height: 1.5;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+/* Animasi tulisan masuk dari kiri */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
