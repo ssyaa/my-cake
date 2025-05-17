@@ -1,0 +1,90 @@
+body, html {
+  margin: 0; padding: 0; height: 100%;
+  font-family: Arial, sans-serif;
+  background: url('/assets/images/croissant.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex; justify-content: center; align-items: center;
+}
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 400px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.form-container h2 {
+  margin-top: 0;
+  text-align: center;
+}
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  resize: vertical;
+}
+textarea {
+  height: 80px;
+}
+input[type="file"] {
+  margin-top: 10px;
+}
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background: #a05010;
+}
+#back-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 12px;
+  color: #555;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#loading {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  gap: 15px;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3; /* Light grey */
+  border-top: 6px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

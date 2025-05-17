@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Add Recipe</title>
+<link rel="stylesheet" href="css/add_recipes.css" />
+</head>
+<body>
+
+<div class="form-container">
+    <div id="back-btn">Back</div>
+    <h2>Add New Recipe</h2>
+    <form id="recipe-form">
+        <label for="title">Title</label>
+        <input type="text" id="title" required />
+
+        <label for="ingredients">Ingredients</label>
+        <textarea id="ingredients" required></textarea>
+
+        <label for="steps">Step by Step</label>
+        <textarea id="steps" required></textarea>
+
+        <label for="image">Add Image</label>
+        <input type="file" id="image" accept="image/*" />
+
+        <button type="submit">Add Recipe</button>
+    </form>
+</div>
+
+<!-- Loading overlay -->
+<div id="loading" style="display:none;">
+    <div class="spinner"></div>
+    <div>Uploading... Please wait.</div>
+</div>
+
+<script type="module" src="/js/add_recipes.js"></script>
+</body>
+</html>

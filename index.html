@@ -1,68 +1,84 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes Cake, Bounjour!</title>
 
     <!-- Link ke file CSS -->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/navbar.css"> <!-- Navbar CSS -->
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/resep_card.css" />
 </head>
-<body>
 
-    <!-- Navbar langsung dimasukkan di sini -->
+<body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo">🍰 MyCake</div>
             <ul class="navbar-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resep.html">Recipe</a></li>
-                <li><a href="about.html">About</a></li>
-                <!-- Link Login yang berubah jadi Logout setelah login -->
-                <li><a href="login.html" id="login-logout">Login</a></li> 
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resep.html">Recipe</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html" id="login-logout">Login</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <!-- Gambar Background -->
-        <div class="hero-background">
-            <img src="assets/images/croissant.jpg" alt="Welcome Image" class="hero-image">
-        </div>
 
-        <!-- Konten -->
-        <div class="hero-content">
-            <h1 class="hero-heading">
-            Recipes Cake, Bounjour!
-            </h1>
-            <p class="hero-paragraph">
-            Temukan dan berbagi resep kue tradisional dan modern. <br>
-            Selamat mencoba dan semoga berhasil membuat kue yang lezat!
-            </p>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+        <img src="assets/images/croissant.jpg" alt="Welcome Image" class="hero-image" />
+            </div>
+                <div class="hero-content">
+                    <h1 class="hero-heading">Recipes Cake, Bounjour!</h1>
+                    <p class="hero-paragraph">
+                        Temukan dan berbagi resep kue tradisional dan modern. <br />
+                        Selamat mencoba dan semoga berhasil membuat kue yang lezat!
+                    </p>
+            </div>
     </section>
 
-    <!-- Link ke file JS -->
-    <script src="js/navbar.js" defer></script> <!-- Navbar loader -->
+    <section class="body_card">
+        <h1 class="judul_cards">Daftar Resep Publik</h1>
+            <div id="cards">Memuat resep...</div>
+    </section>
+
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAXaRHB6TzTo6sHYI5DTRcFvQKASiJeDLw",
+        authDomain: "mycake-8e379.firebaseapp.com",
+        projectId: "mycake-8e379",
+        storageBucket: "mycake-8e379.appspot.com", <!-- typo sebelumnya: firebasestorage.app -->
+        messagingSenderId: "882440746587",
+        appId: "1:882440746587:web:1bf4894b19ab6da69d717e",
+        measurementId: "G-KT0V1Z4YSN"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    </script>
+
+    <!-- Script tambahan -->
+    <script src="js/navbar.js" defer></script>
     <script>
-        // Mengecek apakah user sudah login
         const loginLogoutLink = document.getElementById('login-logout');
-
         if (localStorage.getItem('isLoggedIn') === 'true') {
-            // Mengubah tampilan tombol login menjadi logout
-            loginLogoutLink.textContent = 'Logout';
-            loginLogoutLink.href = '#';  // Gak perlu pergi ke halaman lain
-
-            // Event untuk logout
-            loginLogoutLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                localStorage.removeItem('isLoggedIn');
-                localStorage.removeItem('userEmail');
-                window.location.href = 'index.html'; // Kembali ke home setelah logout
-            });
+        loginLogoutLink.textContent = 'Logout';
+        loginLogoutLink.href = '#';
+        loginLogoutLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'index.html';
+        });
         }
     </script>
-    <script src="js/index.js"></script> <!-- Link ke file JS lainnya -->
+    <script type="module" src="js/navbar.js"></script>
+    <script type="module" src="js/resep_cards.js"></script>
 </body>
 </html>
